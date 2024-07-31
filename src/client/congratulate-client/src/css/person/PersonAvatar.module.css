@@ -1,0 +1,14 @@
+.person_image_wrapper {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.person_image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}

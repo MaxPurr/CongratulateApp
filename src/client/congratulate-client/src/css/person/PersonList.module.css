@@ -1,0 +1,9 @@
+.person_list {
+    margin-top: 20px;
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 20px;
+}

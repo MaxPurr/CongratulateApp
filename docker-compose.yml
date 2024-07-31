@@ -1,0 +1,44 @@
+﻿version: '3.8'
+services:
+  postgresql:
+    image: postgres:latest
+    restart: always
+    container_name: local-postgres
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_DB=congratulate-db"
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d congratulate-db" ]
+      interval: 5s
+      retries: 5
+      start_period: 5s
+      timeout: 5s
+  congratulateapi:
+    image: congratulateapi
+    build:
+      context: .
+      dockerfile: src/api/CongratulateApi/Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgresql:
+        condition:
+          service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      PostgresOptions__ConnectionString: "User ID=postgres;Host=host.docker.internal;Port=5434;Database=congratulate-db;Pooling=true;"
+  congratulateclient:
+    image: congratulateclient
+    build:
+      context: src/client/congratulate-client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - congratulateapi
+    command: ["npm", "start"]

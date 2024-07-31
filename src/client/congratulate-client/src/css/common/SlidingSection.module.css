@@ -1,0 +1,27 @@
+.sliding_section {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.show_btn {
+    color: #00224D;
+    font-size: 28px;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.sliding_section_pane {
+    margin-top: 15px;
+    overflow: hidden;
+    max-height: 0px;
+    transition: 250ms ease-in-out;
+}
+
+.sliding_section_pane_showed {
+    max-height: 500px;
+}
