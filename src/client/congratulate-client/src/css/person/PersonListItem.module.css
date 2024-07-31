@@ -1,0 +1,50 @@
+.person_container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.person_info_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 70%;
+}
+
+.person_name {
+    font-size: 22px;
+    color: #00224D;
+    font-weight: 700;
+}
+
+.person_info {
+    font-size: 20px;
+    color: #757575;
+    font-weight: 400;
+}
+
+.person_delete_bth {
+    margin-top: 5px;
+    width: auto;
+    box-sizing: border-box;
+    border: 3px solid #e4003a;
+    border-radius: 10px;
+    padding: 8px 12px;
+    background-color: #e4003a;
+    font-size: 18px;
+    color: #fff;
+    transition: color 150ms ease-in-out, 
+                background-color 250ms ease-out;
+}
+
+.person_delete_bth:hover,
+.person_delete_bth:focus {
+    background-color: #fff;
+    color: #e4003a;
+}

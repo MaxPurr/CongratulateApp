@@ -1,0 +1,63 @@
+.form {
+    padding: 20px 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 55%;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.label_text {
+    font-size: 20px;
+    color: #757575;
+}
+
+.select {
+    padding: 0 5px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #757575;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #1c1e21;
+    background-color: white;
+}
+
+.checkbox {
+    accent-color: rgb(56, 135, 190);
+}
+
+.submit_btn {
+    background-color: rgb(56, 135, 190);
+    padding: 8px 10px;
+    color: white;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 3px solid rgb(56, 135, 190);
+    transition: color 150ms ease-in-out, 
+                background-color 250ms ease-out;
+}
+
+.submit_bth:hover,
+.submit_bth:focus {
+    color: rgb(56, 135, 190);
+    background-color: white;
+}
+
+.submit_btn:hover,
+.submit_btn:focus {
+    color: rgb(56, 135, 190);
+    background-color: white;
+}
